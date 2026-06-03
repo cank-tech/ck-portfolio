@@ -2,301 +2,395 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Can Kalaora | IT Specialist Portfolio</title>
+    <!-- FontAwesome ve Google Fonts Bağlantıları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        @page {
-            size: A4;
-            margin: 12mm 12mm;
-            background-color: #0f172a; /* Slate 900 - Premium Dark Theme */
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131c2e;
+            --bg-tag: #1e293b;
+            --accent-neon: #38bdf8;
+            --accent-purple: #818cf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #22314d;
         }
-        
+
         * {
             box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: #cbd5e1; /* Slate 300 */
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-muted);
+            background-color: var(--bg-main);
             margin: 0;
-            padding: 0;
-            background-color: #0f172a;
-            font-size: 10pt;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.08) 0px, transparent 50%);
         }
 
-        /* Interactive Header / Hero Section */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* Hero Banner */
         .hero-banner {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid #334155;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            padding: 30px;
+            background: rgba(19, 28, 46, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            margin-bottom: 30px;
+            padding: 40px;
             text-align: center;
-            position: relative;
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
         }
 
         .hero-banner h1 {
             margin: 0;
-            font-size: 26pt;
+            font-size: 36pt;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #f8fafc; /* Slate 50 */
+            letter-spacing: -1px;
+            color: var(--text-main);
+            background: linear-gradient(to right, #f8fafc, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-banner p {
-            margin: 8px 0 18px 0;
+            margin: 10px 0 25px 0;
             font-size: 14pt;
-            color: #38bdf8; /* Sky 400 - Vibrant Accent */
+            color: var(--accent-neon);
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
+        /* İnteraktif Butonlar */
         .nav-pills {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .nav-pill {
-            display: inline-block;
-            background-color: #1e293b;
-            color: #94a3b8;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 8.5pt;
-            margin: 0 4px;
-            border: 1px solid #334155;
-            font-weight: 500;
+            background-color: var(--bg-tag);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 14px;
+            font-size: 9.5pt;
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent-neon);
+            color: var(--text-main);
+            transform: translateY(-2px);
         }
 
         .nav-pill.active {
-            background-color: #38bdf8;
+            background: linear-gradient(135deg, var(--accent-neon) 0%, var(--accent-purple) 100%);
             color: #0f172a;
-            border-color: #38bdf8;
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         }
 
+        /* İletişim Bilgileri */
         .contact-grid {
-            font-size: 9.5pt;
-            color: #94a3b8;
-            margin-top: 15px;
+            font-size: 10pt;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
         }
 
         .contact-item {
-            display: inline-block;
-            margin: 0 12px;
-            color: #cbd5e1;
+            color: var(--text-muted);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Dashboard Layout using Table Structure for Layout Reliability */
+        .contact-item:hover {
+            color: var(--accent-neon);
+        }
+
+        /* Ana İçerik Düzeni */
         .dashboard-layout {
-            display: table;
-            width: 100%;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 25px;
         }
 
-        .dashboard-row {
-            display: table-row;
+        @media (max-width: 850px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .main-panel {
-            display: table-cell;
-            width: 65%;
-            padding-right: 12px;
-            vertical-align: top;
-        }
-
-        .side-panel {
-            display: table-cell;
-            width: 35%;
-            padding-left: 12px;
-            vertical-align: top;
-        }
-
-        /* Card Component */
+        /* Kart Yapısı ve Animasyonlar */
         .card {
-            background-color: #1e293b; /* Slate 800 */
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            page-break-inside: avoid;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* JS ile Filtreleme Esnasında Gizlenecek Kartlar */
+        .card.hidden {
+            display: none !important;
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -10px rgba(56, 189, 248, 0.1);
         }
 
         h2 {
-            font-size: 12pt;
-            color: #f8fafc;
+            font-size: 13pt;
+            color: var(--text-main);
             margin-top: 0;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #334155;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'JetBrains Mono', monospace;
         }
         
         h2 .accent {
-            color: #38bdf8;
+            color: var(--accent-neon);
         }
 
         .summary-text {
-            color: #94a3b8;
+            color: var(--text-muted);
             margin: 0;
-            text-align: justify;
-            font-size: 9.5pt;
+            line-height: 1.8;
+            font-size: 10.5pt;
         }
 
-        /* Timeline / Experience Item */
+        /* Deneyim & Eğitim Listesi */
         .timeline-item {
             position: relative;
-            padding-left: 0px;
-            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-neon);
+            box-shadow: 0 0 10px var(--accent-neon);
         }
 
         .timeline-item:last-child {
             margin-bottom: 0;
+            padding-bottom: 5px;
         }
 
         .job-title {
-            font-size: 11pt;
+            font-size: 12pt;
             font-weight: 700;
-            color: #f8fafc;
+            color: var(--text-main);
         }
 
         .company-meta {
-            font-size: 9pt;
-            color: #38bdf8;
-            margin: 2px 0 8px 0;
+            font-size: 9.5pt;
+            color: var(--accent-purple);
+            margin: 5px 0 12px 0;
             font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .company-meta .date-badge {
-            float: right;
-            background-color: #0f172a;
-            color: #64748b;
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid #334155;
-            font-size: 8pt;
+            background-color: var(--bg-main);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 8.5pt;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         ul {
             margin: 0;
-            padding-left: 16px;
-            color: #94a3b8;
-            font-size: 9.5pt;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 10pt;
         }
 
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
 
-        /* Interactive Skill Interactive Tags */
+        /* Yetenek Etiketleri */
         .interactive-tag {
             display: inline-block;
-            background-color: #0f172a;
-            color: #cbd5e1;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 8.5pt;
-            margin-right: 6px;
-            margin-bottom: 8px;
-            border: 1px solid #334155;
-            transition: all 0.2s ease;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 9pt;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .interactive-tag:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-neon);
+            color: var(--accent-neon);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
         }
 
         .skill-group-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 9pt;
-            color: #94a3b8;
-            margin-top: 12px;
-            margin-bottom: 6px;
+            color: var(--text-muted);
+            margin-top: 20px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Languages Progress Emulation */
+        /* Diller Seviye Barları */
         .lang-container {
-            margin-bottom: 12px;
+            margin-bottom: 18px;
         }
 
         .lang-header {
-            font-weight: 500;
-            margin-bottom: 4px;
-            font-size: 9.5pt;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            color: var(--text-main);
         }
 
         .lang-level-text {
             float: right;
-            color: #38bdf8;
-            font-size: 8.5pt;
-            font-weight: bold;
+            color: var(--accent-neon);
+            font-size: 9pt;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .progress-bar-bg {
-            background-color: #0f172a;
-            height: 6px;
-            border-radius: 3px;
+            background-color: var(--bg-main);
+            height: 8px;
+            border-radius: 4px;
             width: 100%;
-            border: 1px solid #334155;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
         }
 
         .progress-bar-fill {
-            background-color: #38bdf8;
-            height: 4px;
-            border-radius: 2px;
+            background: linear-gradient(to right, var(--accent-neon), var(--accent-purple));
+            height: 100%;
+            border-radius: 4px;
+            width: 0; /* JS ile canlandırılacak */
+            transition: width 1.5s ease-out;
         }
 
         .footer {
             text-align: center;
-            font-size: 8pt;
+            font-size: 9pt;
             color: #475569;
-            margin-top: 15px;
-            padding-top: 12px;
-            border-top: 1px solid #1e293b;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-family: 'JetBrains Mono', monospace;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero / Navigation Deck -->
-    <div class="hero-banner">
-        <h1>CAN KALAORA</h1>
-        <p>IT Specialist</p>
-        
-        <div class="nav-pills">
-            <span class="nav-pill active">📊 Dashboard</span>
-            <span class="nav-pill">💼 Experience</span>
-            <span class="nav-pill">🛠 Tech Stack</span>
-            <span class="nav-pill">🎓 Education</span>
-        </div>
-
-        <div class="contact-grid">
-            <span class="contact-item">📞 +39 349 552 3072</span> | 
-            <span class="contact-item">✉ hello@cankalaora.dev</span> | 
-            <span class="contact-item">🔗 linkedin.com/in/cankalaora</span>
-        </div>
-    </div>
-
-    <div class="dashboard-layout">
-        <div class="dashboard-row">
+    <div class="container">
+        <!-- Üst Kısım / Kahraman Alanı -->
+        <div class="hero-banner">
+            <h1>CAN KALAORA</h1>
+            <p>IT Specialist</p>
             
-            <!-- Left Panel: Core Profile, Experience & Education -->
-            <div class="main-panel">
+            <!-- İnteraktif Filtreleme Menüsü -->
+            <div class="nav-pills">
+                <span class="nav-pill active" onclick="filterCategory('all', this)"><i class="fa-solid incentives fa-chart-pie"></i> Dashboard</span>
+                <span class="nav-pill" onclick="filterCategory('experience', this)"><i class="fa-solid fa-briefcase"></i> Experience</span>
+                <span class="nav-pill" onclick="filterCategory('tech', this)"><i class="fa-solid fa-code"></i> Tech Stack</span>
+                <span class="nav-pill" onclick="filterCategory('education', this)"><i class="fa-solid fa-graduation-cap"></i> Education</span>
+            </div>
+
+            <!-- İletişim Bilgileri (İkonlu) -->
+            <div class="contact-grid">
+                <a href="tel:+393495523072" class="contact-item"><i class="fa-solid fa-phone"></i> +39 349 552 3072</a> 
+                <a href="mailto:hello@cankalaora.dev" class="contact-item"><i class="fa-solid fa-envelope"></i> hello@cankalaora.dev</a> 
+                <a href="https://linkedin.com/in/cankalaora" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/cankalaora</a>
+            </div>
+        </div>
+
+        <!-- Ana Düzen (Grid Yapısı) -->
+        <div class="dashboard-layout">
+            
+            <!-- Sol Sütun -->
+            <div class="left-column">
                 
-                <!-- Summary Card -->
-                <div class="card">
+                <!-- Özet Kartı -->
+                <div class="card" data-category="experience">
                     <h2><span class="accent">//</span> Executive Summary</h2>
                     <p class="summary-text">
                         Dynamic IT Specialist with 1 year of professional corporate experience configuring robust hardware and software environments to maximize workflow efficiency. Proven ability to bridge the gap between complex technical parameters and end-user needs through articulate, non-technical translation. Exceptionally skilled in systems infrastructure optimization, proactive inventory lifecycles, and rapid deployment of customized workstation architecture.
                     </p>
                 </div>
 
-                <!-- Professional Experience Card -->
-                <div class="card">
+                <!-- İş Deneyimleri Kartı -->
+                <div class="card" data-category="experience">
                     <h2><span class="accent">//</span> Professional Experience</h2>
                     
                     <div class="timeline-item">
                         <div class="job-title">IT Specialist</div>
                         <div class="company-meta">
-                            Nockta — Remote, Italy 
+                            <span><i class="fa-solid fa-building"></i> Nockta — Remote, Italy</span> 
                             <span class="date-badge">10/2024 - 02/2026</span>
                         </div>
                         <ul>
@@ -306,10 +400,10 @@
                         </ul>
                     </div>
                     
-                    <div class="timeline-item" style="margin-top: 20px;">
+                    <div class="timeline-item">
                         <div class="job-title">Information Technology Support Intern</div>
                         <div class="company-meta">
-                            Altıntel Liman ve Terminal İşletmeleri A.Ş. — Istanbul, TR 
+                            <span><i class="fa-solid fa-building"></i> Altıntel Liman ve Terminal İşletmeleri A.Ş. — Istanbul, TR</span> 
                             <span class="date-badge">07/2022 - 08/2022</span>
                         </div>
                         <ul>
@@ -319,28 +413,28 @@
                     </div>
                 </div>
 
-                <!-- Academic Foundation Card -->
-                <div class="card">
+                <!-- Eğitim Kartı -->
+                <div class="card" data-category="education">
                     <h2><span class="accent">//</span> Academic Credentials</h2>
                     
                     <div class="timeline-item">
                         <div class="job-title">Master of Science (MSc) — Business Administration & Management</div>
-                        <div class="company-meta">Politecnico di Torino — Turin, Italy <span class="date-badge">09/2025 - Present</span></div>
+                        <div class="company-meta"><span><i class="fa-solid fa-university"></i> Politecnico di Torino — Turin, Italy</span> <span class="date-badge">09/2025 - Present</span></div>
                     </div>
                     
-                    <div class="timeline-item" style="margin-top: 15px;">
+                    <div class="timeline-item">
                         <div class="job-title">Bachelor of Science (BSc) — Computer Engineering</div>
-                        <div class="company-meta">Politecnico di Torino — Turin, Italy <span class="date-badge">09/2020 - 09/2025</span></div>
+                        <div class="company-meta"><span><i class="fa-solid fa-university"></i> Politecnico di Torino — Turin, Italy</span> <span class="date-badge">09/2020 - 09/2025</span></div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Right Panel: Matrix Stack & Global Profiling -->
-            <div class="side-panel">
+            <!-- Sağ Sütun -->
+            <div class="right-column">
                 
-                <!-- Core Competencies Matrix -->
-                <div class="card">
+                <!-- Teknoloji Kartı -->
+                <div class="card" data-category="tech">
                     <h2><span class="accent">//</span> Matrix Stack</h2>
                     
                     <div class="skill-group-title">Programming Ecosystems</div>
@@ -357,36 +451,36 @@
                     <div class="interactive-tag">VS Code</div>
                     <div class="interactive-tag">Eclipse IDE</div>
 
-                    <div class="skill-group-title">Enterprise Ops & Service Architecture</div>
-                    <div class="interactive-tag">Google Workspace Admin</div>
+                    <div class="skill-group-title">Enterprise Ops & Service</div>
+                    <div class="interactive-tag">Google Workspace</div>
                     <div class="interactive-tag">Jira Service Management</div>
-                    <div class="interactive-tag">Help Desk Systems Support</div>
+                    <div class="interactive-tag">Help Desk Support</div>
                     <div class="interactive-tag">Advanced Troubleshooting</div>
                     <div class="interactive-tag">Microsoft Ecosystem</div>
                 </div>
 
-                <!-- Global Communications -->
-                <div class="card">
+                <!-- Dil Seviyeleri Kartı -->
+                <div class="card" data-category="tech">
                     <h2><span class="accent">//</span> Global Communications</h2>
                     
                     <div class="lang-container">
                         <div class="lang-header">Turkish <span class="lang-level-text">Native (C2)</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="100%"></div></div>
                     </div>
                     
                     <div class="lang-container">
                         <div class="lang-header">English <span class="lang-level-text">Fluent (C1)</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90%"></div></div>
                     </div>
                     
                     <div class="lang-container">
                         <div class="lang-header">Italian <span class="lang-level-text">Intermediate (B1)</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 65%;"></div></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="65%"></div></div>
                     </div>
                     
                     <div class="lang-container">
                         <div class="lang-header">Spanish <span class="lang-level-text">Elementary (A2)</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 40%;"></div></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="40%"></div></div>
                     </div>
                 </div>
 
@@ -396,8 +490,55 @@
     </div>
 
     <div class="footer">
-        // Powered by Squarespace Custom Framework Engine &bull; cankalaora.dev &bull; Terminal Portfolio V2.0
+        // © 2026 cankalaora.dev • Built with Modern Tech Aesthetics • Portfolio V3.0
     </div>
 
+    <!-- Etkileşim ve Filtreleme Sağlayan JavaScript Kodu -->
+    <script>
+        function filterCategory(category, button) {
+            // Aktif buton stilini değiştirme
+            document.querySelectorAll('.nav-pill').forEach(pill => pill.classList.remove('active'));
+            button.classList.add('active');
+
+            const cards = document.querySelectorAll('.card');
+            const layout = document.querySelector('.dashboard-layout');
+
+            if (category === 'all') {
+                // Dashboard modunda grid yapısını eski haline getir ve her şeyi göster
+                layout.style.gridTemplateColumns = window.innerWidth > 850 ? "1.6fr 1fr" : "1fr";
+                cards.forEach(card => card.classList.remove('hidden'));
+            } else {
+                // Tek bir kategori seçildiğinde yan yana değil, tek sütun olarak geniş göster
+                layout.style.gridTemplateColumns = "1fr";
+                cards.forEach(card => {
+                    if (card.getAttribute('data-category') === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // Dil ilerleme çubuklarını sayfa açıldığında animasyonlu yükleme
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.progress-bar-fill').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }, 300);
+        });
+
+        // Ekran boyutu değiştiğinde grid esnekliğini koruma
+        window.addEventListener('resize', () => {
+            const activePill = document.querySelector('.nav-pill.active').innerText;
+            const layout = document.querySelector('.dashboard-layout');
+            if (activePill.includes('Dashboard') && window.innerWidth > 850) {
+                layout.style.gridTemplateColumns = "1.6fr 1fr";
+            } else {
+                layout.style.gridTemplateColumns = "1fr";
+            }
+        });
+    </script>
 </body>
 </html>
