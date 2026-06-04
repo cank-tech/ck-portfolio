@@ -125,6 +125,11 @@
             margin: 0 12px;
             color: #cbd5e1;
             text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: #38bdf8; /* Linklerin üzerine gelindiğinde parlayacak renk */
         }
 
         /* Dashboard Layout using Table Structure for Layout Reliability */
@@ -316,10 +321,11 @@
             <span class="nav-pill" id="nav-edu" onclick="scrollToSection('card-education', this)">🎓 Education</span>
         </div>
 
+        <!-- Tıklanabilir Bağlantılar -->
         <div class="contact-grid">
-            <span class="contact-item">📞 +39 349 552 3072</span> | 
-            <span class="contact-item">✉ hello@cankalaora.tech</span> | 
-            <span class="contact-item">🔗 LinkedIn Profile</span>
+            <a href="tel:+393495523072" class="contact-item">📞 +39 349 552 3072</a> | 
+            <a href="mailto:hello@cankalaora.tech" class="contact-item">✉ hello@cankalaora.tech</a> | 
+            <a href="https://linkedin.com/in/cankalaora" target="_blank" rel="noopener noreferrer" class="contact-item">🔗 LinkedIn Profile</a>
         </div>
     </div>
 
@@ -457,7 +463,7 @@
                 navTech: "🛠 Tech Stack",
                 navEdu: "🎓 Education",
                 titleSummary: "<span class='accent'>//</span> Executive Summary",
-        textSummary: "Dynamic IT Specialist with 2 years of professional experience in corporate IT environments, delivering reliable hardware and software solutions that enhance operational efficiency and business productivity. Skilled in translating complex technical concepts into clear, user-friendly guidance, ensuring effective communication between technical teams and end users. Experienced in IT infrastructure management, system optimization, asset lifecycle administration, and the deployment of tailored workstation solutions. Recognized for a proactive problem-solving approach, strong technical expertise, and a commitment to maintaining high-performance technology environments.",
+                textSummary: "Dynamic IT Specialist with 2 years of professional experience in corporate IT environments, delivering reliable hardware and software solutions that enhance operational efficiency and business productivity. Skilled in translating complex technical concepts into clear, user-friendly guidance, ensuring effective communication between technical teams and end users. Experienced in IT infrastructure management, system optimization, asset lifecycle administration, and the deployment of tailored workstation solutions. Recognized for a proactive problem-solving approach, strong technical expertise, and a commitment to maintaining high-performance technology environments.",
                 titleExperience: "<span class='accent'>//</span> Professional Experience",
                 job1Title: "IT Specialist",
                 job1Meta: "Nockta — Remote, Italy <span class='date-badge'>10/2024 - 02/2026</span>",
@@ -499,8 +505,7 @@
                 navTech: "🛠 Teknolojiler",
                 navEdu: "🎓 Eğitim",
                 titleSummary: "<span class='accent'>//</span> Özet Değerlendirme",
-                textSummary: "Kurumsal BT ortamlarında 2 yıllık profesyonel deneyime sahip dinamik bir Bilgi Teknolojileri Uzmanıyım. Operasyonel verimliliği ve iş sürekliliğini artıran güvenilir donanım ve yazılım çözümleri sunma konusunda deneyimliyim. Karmaşık teknik kavramları son kullanıcılar için anlaşılır ve uygulanabilir bilgilere dönüştürerek teknik ekipler ile kullanıcılar arasında etkili iletişim kurulmasını sağlarım. BT altyapısı yönetimi, sistem optimizasyonu, varlık yaşam döngüsü yönetimi ve özelleştirilmiş iş istasyonu kurulumlarında yetkinim. Proaktif problem çözme yaklaşımım, güçlü teknik bilgi birikimim ve yüksek performanslı teknoloji ortamlarının sürdürülebilirliğine olan bağlılığımla tanınırım.
-",
+                textSummary: "Kurumsal BT ortamlarında 2 yıllık profesyonel deneyime sahip dinamik bir Bilgi Teknolojileri Uzmanıyım. Operasyonel verimliliği i ve iş sürekliliğini artıran güvenilir donanım ve yazılım çözümleri sunma konusunda deneyimliyim. Karmaşık teknik kavramları son kullanıcılar için anlaşılır ve uygulanabilir bilgilere dönüştürerek teknik ekipler ile kullanıcılar arasında etkili iletişim kurulmasını sağlarım. BT altyapısı yönetimi, sistem optimizasyonu, varlık yaşam döngüsü yönetimi ve özelleştirilmiş iş istasyonu kurulumlarında yetkinim. Proaktif problem çözme yaklaşımım, güçlü teknik bilgi birikimim ve yüksek performanslı teknoloji ortamlarının sürdürülebilirliğine olan bağlılığımla tanınırım.",
                 titleExperience: "<span class='accent'>//</span> Profesyonel Deneyim",
                 job1Title: "BT Uzmanı",
                 job1Meta: "Nockta — Uzaktan (Remote), İtalya <span class='date-badge'>10/2024 - 02/2026</span>",
@@ -542,13 +547,12 @@
                 navTech: "🛠 Tecnologie",
                 navEdu: "🎓 Formazione",
                 titleSummary: "<span class='accent'>//</span> Profilo Professionale",
-                textSummary: "Specialista IT dinamico con 2 anni di esperienza professionale in ambienti aziendali, impegnato nella fornitura di soluzioni hardware e software affidabili per migliorare l'efficienza operativa e la produttività aziendale. Esperto nel tradurre concetti tecnici complessi in informazioni chiare e comprensibili per gli utenti finali, facilitando una comunicazione efficace tra team tecnici e personale non tecnico. Competenze consolidate nella gestione delle infrastrutture IT, nell'ottimizzazione dei sistemi, nella gestione del ciclo di vita delle risorse tecnologiche e nell'implementazione di postazioni di lavoro personalizzate. Riconosciuto per l'approccio proattivo alla risoluzione dei problemi, le solide competenze tecniche e l'impegno nel mantenimento di ambienti tecnologici ad alte prestazioni.
-",
+                textSummary: "Specialista IT dinamico con 2 anni di esperienza professionale in ambienti aziendali, impegnato nella fornitura di soluzioni hardware e software affidabili per migliorare l'efficienza operativa e la produttività aziendale. Esperto nel tradurre concetti tecnici complessi in informazioni chiare e comprensibili per gli utenti finali, facilitando una comunicazione efficace tra team tecnici e personale non tecnico. Competenze consolidate nella gestione delle infrastrutture IT, nell'ottimizzazione dei sistemi, nella gestione del ciclo di vita delle risorse tecnologiche e nell'implementazione di postazioni di lavoro personalizzate. Riconosciuto per l'approccio proattivo alla risoluzione dei problemi, le solide competenze tecniche e l'impegno nel mantenimento di ambienti tecnologici ad alte prestazioni.",
                 titleExperience: "<span class='accent'>//</span> Esperienza Professionale",
                 job1Title: "Specialista IT",
                 job1Meta: "Nockta — Da remoto, Italia <span class='date-badge'>10/2024 - 02/2026</span>",
                 job1Bullets: [
-                    "Configurato livelli hardware complessi, periferiche e ambienti software operativi fondamentali per creare workstation ingegneristiche altamente ottimizzate.",
+                    "Configurato livelli hardware complessi, periferiche e environments di sistema operativo fondamentali per creare workstation ingegneristiche altamente ottimizzate.",
                     "Gestito l'intero parco software e le matrici di inventario dei dispositivi, mappando con successo i cicli di vita delle versioni, le patch preventive e l'obsolescenza dell'hardware.",
                     "Tradotto concetti tecnici architetturali di alto livello in moduli di formazione accessibili agli utenti, riducendo al minimo i tempi di inattività dei team remoti interfunzionali."
                 ],
@@ -666,9 +670,6 @@
 
             // Footer
             document.getElementById('footer-text').innerHTML = data.footerText;
-            
-            // Global language attribute fix
-            document.documentElement.lang = lang;
         }
     </script>
 </body>
